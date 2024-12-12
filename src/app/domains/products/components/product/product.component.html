@@ -1,0 +1,25 @@
+<div class="group rounded-lg border">
+  <a href="#" class="w-full overflow-hidden rounded-t-lg bg-gray-200">
+      <img [src]="product.images[0]" [alt]="product.title" class="h-full w-full object-cover object-center group-hover:opacity-75"
+      style="aspect-ratio: 20/16;"
+      >
+  </a>
+  <div class="flex flex-col space-y-2 p-4">
+      <h4 class="text-sm text-gray-700">{{ product.title | uppercase}}</h4>
+      <h4 class="text-sm text-gray-700">{{ product.title | uppercase | reverse}}</h4>
+      <p class="text-lg font-medium text-gray-900">{{product.price | currency: '$': 'symbol':'1.0'}}</p>
+      <p class="text-sm font-medium text-gray-500">{{product.creationAt | date: 'shortDate'}}</p>
+      <p class="text-sm font-medium text-gray-500">{{product.creationAt | timeAgo }}</p>
+      <button class="text-black bg-gray-200 font-medium rounded-lg text-sm px-5 py-2.5 w-full"
+          (click)="addToCartHandler()">Add to cart</button>
+  </div>
+</div>
+
+<!-- Producto quemado de prueba para probar los pipes -->
+<!-- <div class="flex flex-col space-y-2 p-4">
+  <h4 class="text-sm text-gray-700">producto quemado</h4>
+  <p class="text-sm font-medium text-gray-500">2024-12-10T22:57:45.000Z</p>
+  <p class="text-sm font-medium text-gray-500">{{'2024-12-10T24:57:45.000Z' | timeAgo }}</p>
+  <button class="text-black bg-gray-200 font-medium rounded-lg text-sm px-5 py-2.5 w-full"
+      (click)="addToCartHandler()">Add to cart</button>
+</div> -->

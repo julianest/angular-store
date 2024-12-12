@@ -1,0 +1,29 @@
+<div class="container mx-auto">
+  <app-header/>
+
+  <!-- <div class="grid grid-cols-3 gap-8">
+    <app-product
+      *ngFor="let product of products()"
+      [title]="product.title"
+      [price]="product.price"
+      [img]="product.image"
+      (addtoCart)="fromChild($event)"/>
+  </div> antes le pasabamos un por uno ahora se le a a pasar todo-->
+
+  <!-- y este seria con el nuevo formato de angular
+  <div class="grid grid-cols-3 gap-8">
+    @for (product of products(); track $index) {
+        <app-product
+            [product]="product"
+            (addToCart)="fromChild($event)"
+        />
+    }
+  </div> -->
+  <!-- <h3 class="text-3xl">{{cartFromList().length}} </h3> -->
+  <div class="grid grid-cols-4 gap-8 mt-5">
+    <app-product
+      *ngFor="let product of products()"
+      [product]="product"
+      (addtoCartFromProduct)="addToCartfromChild_Product($event)"/>
+  </div>
+</div>

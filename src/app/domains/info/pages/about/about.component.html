@@ -1,0 +1,18 @@
+<!-- <p>  Informacion de Practica
+  <input type="number" [value]="duration()" (change)="changeduration($event)">
+</p>
+<p>
+  <input type="text" [value]="message()" (change)="changemessage($event)" >
+</p>
+<p>
+  <app-counter [duration]="duration()" [message]="message()" *ngIf="duration()>0" />
+</p> -->
+
+<div class="px-10">
+  <h1 class="text-lg font-bold">About</h1>
+  <p class="text-xs"><span highlight> Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse dignissimos excepturi soluta facilis ea. Nisi natus odit veritatis praesentium consequatur facere qui sint incidunt non quam! Officia, nesciunt? Nulla, quas!</span></p>
+  <p class="text-xs">Numero de clientes <app-counter [duration]="duration()" [message]="message()" *ngIf="duration()>0" /></p>
+    <div>
+      <app-wave-audio audioUrl="assets/Audio/stableaudio.mp3" />
+    </div>
+</div>
