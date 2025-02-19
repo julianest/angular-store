@@ -2,12 +2,13 @@ export interface ProductModel{
   id: number;
   title: string;
   price: number;
+  description: string;
   images: string[];
   creationAt: string;
-  category: Category;
+  category: CategoryModel;
 }
 
-export interface Category{
+export interface CategoryModel{
   id: number;
   name: string;
   image: string;

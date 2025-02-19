@@ -1,5 +1,6 @@
 import { Component,Input,signal,SimpleChanges } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { RouterLinkWithHref, RouterLinkActive, RouterModule } from '@angular/router';
 
 //Models
 import { ProductModel } from '@shared';
@@ -11,7 +12,7 @@ import { CartService } from '../../../../services/cart.service';
 @Component({
   selector: 'app-header',
   standalone: true,
-  imports: [SideMenuComponent,CommonModule],
+  imports: [SideMenuComponent, CommonModule, RouterLinkWithHref,  RouterModule],
   templateUrl: './header.component.html',
   styleUrl: './header.component.css'
 })

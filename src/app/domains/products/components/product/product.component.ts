@@ -1,5 +1,6 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { RouterLinkWithHref } from '@angular/router';
 
 //Model
 import { ProductModel } from '@shared';
@@ -10,7 +11,7 @@ import { ReversePipe, TimeAgoPipe } from '@shared';
 @Component({
   selector: 'app-product',
   standalone: true,
-  imports: [CommonModule,ReversePipe,TimeAgoPipe],
+  imports: [CommonModule,ReversePipe,TimeAgoPipe,RouterLinkWithHref],
   templateUrl: './product.component.html',
   styleUrl: './product.component.css'
 })

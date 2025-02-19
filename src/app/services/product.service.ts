@@ -11,13 +11,14 @@ import { ProductModel } from '@shared';
 })
 export class ProductService {
 
-  private apiUrl= 'https://api.escuelajs.co/api/v1/products';
-  private http = inject(HttpClient);
+  private readonly apiUrl= new URL('https://api.escuelajs.co/api/v1/products');
+  private readonly http = inject(HttpClient);
 
   constructor() {}
 
-  getProducts(): Observable<ProductModel[]>{
-    return this.http.get<ProductModel[]>(this.apiUrl).pipe(
+  getProducts(category_id?: string ): Observable<ProductModel[]>{
+    category_id && this.apiUrl.searchParams.set('categoryId', category_id) ;
+    return this.http.get<ProductModel[]>(String(this.apiUrl)).pipe(
       map(products => products.map(product => ({
         ...product,
         images: product.images.map(image => this.cleanImageUrl(image)),
@@ -31,6 +32,10 @@ export class ProductService {
 
   private cleanImageUrl(url: string): string{
     return url.replace(/[\[\]\\\"']/g, '').split('?')[0].trim();
+  }
+
+  getOne(id: string){
+    return this.http.get<ProductModel>(this.apiUrl +'/'+ id);
   }
 
 
